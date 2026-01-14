@@ -17,8 +17,8 @@ Each user has their own tasks stored securely in MongoDB. The app supports task 
 
 1. Clone repository
    ```bash
-   git clone <your-repo-link>
-   cd task-manager
+   git clone https://github.com/DevSood12/task-manager-full-stack.git
+   cd task-manager-full-stack
 2. Install dependencies
     cd backend
     npm install

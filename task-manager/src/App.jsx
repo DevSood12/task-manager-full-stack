@@ -410,7 +410,8 @@ const Dashboard = ({ user, token, onLogout }) => {
     try {
       // const newTask = await API.createTask(user.id, taskData);
       const newTask = await API.createTask(token, taskData);
-      setTasks([...tasks, newTask]);
+      // setTasks([...tasks, newTask]);
+      setTasks(prev => [...prev, newTask]);
       setShowTaskForm(false);
     } catch (error) {
       console.error('Error creating task:', error);
@@ -421,7 +422,8 @@ const Dashboard = ({ user, token, onLogout }) => {
     try {
       // const updated = await API.updateTask(user.id, editingTask.id, taskData);
       const updated = await API.updateTask(token, editingTask._id || editingTask.id, taskData);
-      setTasks(tasks.map(t => t._id === updated._id ? updated : t));
+      setTasks(tasks.map(t => (t._id === updated._id ? updated : t)));
+      // setTasks(tasks.map(t => t._id === updated._id ? updated : t));
       setEditingTask(null);
     } catch (error) {
       console.error('Error updating task:', error);

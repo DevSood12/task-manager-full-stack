@@ -12,9 +12,21 @@ connectDB();
 const app = express();
 
 // Allow frontend to call backend
+// app.use(
+//   cors({
+//     origin: ["http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "http://localhost:5176"],
+//     credentials: true,
+//   })
+// );
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "http://localhost:5176"],
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "http://localhost:5175",
+      "http://localhost:5176",
+      "https://task-manager-full-stack12.vercel.app"
+    ],
     credentials: true,
   })
 );

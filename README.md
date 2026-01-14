@@ -20,21 +20,25 @@ Each user has their own tasks stored securely in MongoDB. The app supports task 
    git clone https://github.com/DevSood12/task-manager-full-stack.git
    cd task-manager-full-stack
 2. Install dependencies
+    ```bash
     cd backend
     npm install
+    npm run dev
 3. Setup database
     Install MongoDB locally OR use MongoDB Atlas
     Create a .env file inside backend/
 4. Run migrations
     Not required (MongoDB uses schemas via Mongoose)
 5. Start server
-    npm run dev
     Backend runs at http://localhost:5000
 
 ### Frontend
 
 1. Navigate to frontend directory
-    cd ../task-manager
+    ```bash
+    cd task-manager
+    npm install
+    npm run dev
 2. Install dependencies
     npm install
 3. Configure API endpoints

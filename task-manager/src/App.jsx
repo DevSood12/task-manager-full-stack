@@ -4,7 +4,8 @@ import { Search, Plus, Filter, Calendar, Tag, AlertCircle, CheckCircle, Clock, T
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  // baseURL: "http://localhost:5000/api",
+  baseURL: "https://task-manager-full-stack-dcau.onrender.com/api",
 });
 
 // ✅ Auth + Task API wrapper

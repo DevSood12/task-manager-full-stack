@@ -25,19 +25,19 @@ Each user’s tasks are stored securely in MongoDB. The system supports creating
     npm install
 
 3. Setup database
-    Install MongoDB locally OR use MongoDB Atlas
-    Create a .env file inside backend/ with:
-    PORT=5000
-    MONGO_URI=your_mongodb_connection_string
-    JWT_SECRET=your_secret_key
+-    Install MongoDB locally OR use MongoDB Atlas
+-    Create a .env file inside backend/ with:
+-       PORT=5000
+-       MONGO_URI=your_mongodb_connection_string
+-       JWT_SECRET=your_secret_key
 
 4. Run migrations
-    Not required (MongoDB uses schemas via Mongoose)
+-    Not required (MongoDB uses schemas via Mongoose)
 5. Start server  
     ```bash
     npm run dev
     
-    Backend will run at: http://localhost:5000
+-    Backend will run at: http://localhost:5000
 
 
 ### Frontend
@@ -51,15 +51,15 @@ Each user’s tasks are stored securely in MongoDB. The system supports creating
     npm install
 
 3. Configure API endpoints
-    Update API baseURL in frontend code:
-    Local: Update API baseURL in frontend code:
-    Deployed: baseURL: "https://task-manager-full-stack-dcau.onrender.com/api"
+-    Update API baseURL in frontend code:
+-    Local: Update API baseURL in frontend code:
+-    Deployed: baseURL: "https://task-manager-full-stack-dcau.onrender.com/api"
 
 4. Start development server
     ```bash
     npm run dev
 
-   Frontend will run at:  http://localhost:5173
+-   Frontend will run at:  http://localhost:5173
 
 ## Features Implemented
 

@@ -8,6 +8,7 @@ const options = {
       version: "1.0.0",
       description: "API documentation for Task Management System",
     },
+
     servers: [
       {
         url: "http://localhost:5000",
@@ -18,8 +19,21 @@ const options = {
         description: "Render server",
       },
     ],
+
+    // ✅ Add JWT Authorization support in Swagger
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT",
+        },
+      },
+    },
   },
-  apis: ["./src/routes/*.js"], // reads your routes for docs
+
+  // ✅ Swagger will scan these files for docs
+  apis: ["./src/routes/*.js"],
 };
 
 export const swaggerSpec = swaggerJSDoc(options);

@@ -27,9 +27,9 @@ Each user’s tasks are stored securely in MongoDB. The system supports creating
 3. Setup database
 -    Install MongoDB locally OR use MongoDB Atlas
 -    Create a .env file inside backend/ with:
-       PORT=5000
-       MONGO_URI=your_mongodb_connection_string
-       JWT_SECRET=your_secret_key
+-       PORT=5000
+-       MONGO_URI=your_mongodb_connection_string
+-       JWT_SECRET=your_secret_key
 
 4. Run migrations
 -    Not required (MongoDB uses schemas via Mongoose)

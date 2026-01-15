@@ -18,18 +18,36 @@ const app = express();
 //     credentials: true,
 //   })
 // );
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:5173",
+//       "http://localhost:5174",
+//       "http://localhost:5175",
+//       "http://localhost:5176",
+//       "https://task-manager-full-stack12.vercel.app"
+//     ],
+//     credentials: true,
+//   })
+// );
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "http://localhost:5174",
-      "http://localhost:5175",
-      "http://localhost:5176",
-      "https://task-manager-full-stack12.vercel.app"
-    ],
+    origin: (origin, cb) => {
+      // allow Postman / server-to-server
+      if (!origin) return cb(null, true);
+
+      // allow localhost
+      if (origin.startsWith("http://localhost:")) return cb(null, true);
+
+      // ✅ allow all vercel deployments of this project
+      if (origin.includes(".vercel.app")) return cb(null, true);
+
+      return cb(new Error("Not allowed by CORS"));
+    },
     credentials: true,
   })
 );
+
 
 app.use(express.json());
 

@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./src/config/db.js";
+import swaggerUi from "swagger-ui-express";
+import { swaggerSpec } from "./swagger.js";
 
 import authRoutes from "./src/routes/auth.routes.js";
 import taskRoutes from "./src/routes/task.routes.js";
@@ -56,6 +58,13 @@ app.get("/", (req, res) => {
 });
 
 // routes
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+app.get("/swagger.json", (req, res) => {
+  res.setHeader("Content-Type", "application/json");
+  res.send(swaggerSpec);
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
